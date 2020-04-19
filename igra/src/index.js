@@ -4,9 +4,11 @@ import Player from "./player";
 import "./styles.css";
 
 const weapons = ["nula","jedan", "dva", "tri","cetri","pet"];
+const odabir =  ["par","nepar"];
 class App extends Component {
   state = {
     playerOne: weapons[0],
+    playerParNepar: odabir[0],
     playerTwo: weapons[0],
     winner: ""
   };
@@ -29,20 +31,31 @@ class App extends Component {
   };
 
   selectWinner = () => {
-    const { playerOne, playerTwo } = this.state;
+    const { playerOne, playerTwo,playerParNepar } = this.state;
 
     if (playerOne === playerTwo) {
-      return "Oops it's a Tie!";
-    } else if (
-      (playerOne === "nula" && playerTwo === "jedan") ||
-      (playerOne === "jedan" && playerTwo === "dva") ||
-      (playerOne === "dva" && playerTwo === "tri") ||
-      (playerOne === "tri" && playerTwo === "cetri") ||
-      (playerOne === "cetri" && playerTwo === "pet")
-    ) {
-      return "Player One Wins!";
-    } else {
-      return "Player Two Wins!";
+       
+       return this.startGame();
+    } else{
+      let igrac=0;
+      while(weapons[igrac]!==playerOne){
+        igrac++;
+      }
+      let komp=0;
+      while(weapons[komp]!==playerTwo){
+        komp++;
+      }
+
+      let rez=komp+igrac;
+
+      if((rez%2===0 && playerParNepar==="par") || (rez%2!==0 && playerParNepar==="nepar") ){
+        return "Igrac je pobijedio";
+      }
+      else{
+        return "Komp pobjeduje";
+      }
+      
+
     }
   };
   selectWeapon = weapon => {
@@ -51,6 +64,24 @@ class App extends Component {
       winner: ""
     });
   };
+
+  selectParNepar = odabir =>{
+    this.setState({
+      playerParNepar: odabir
+    });
+  };
+
+
+  onChange = () => {
+    if (this.state.color === 'black'){
+      this.setState({ color: 'grey' });
+    }
+    else {
+      this.setState({ color: 'black' });
+    }
+  }
+
+
   render() {
     const { playerOne, playerTwo, winner } = this.state;
     return (
@@ -97,6 +128,15 @@ class App extends Component {
             onClick={() => this.selectWeapon("pet")}
           >
             pet
+          </button>
+        </div>
+        <div>
+        <button className="parneparBtn" onClick={() => this.selectParNepar("par")}>
+            Par
+          </button></div>
+          <div>
+          <button className="parneparBtn" onClick={() => this.selectParNepar("nepar")}>
+            Nepar
           </button>
         </div>
         <div className="winner">{winner ? this.selectWinner() : null}</div>

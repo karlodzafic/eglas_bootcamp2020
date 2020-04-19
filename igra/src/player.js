@@ -6,7 +6,7 @@ import tri from "./assets/3.jpg";
 import cetri from "./assets/4.jpg";
 import pet from "./assets/5.jpg";
 
-const Player = ({ weapon }) => (
+const Player = ({ weapon,odabir }) => (
   <>
     <div className="player">
       <img
@@ -15,7 +15,7 @@ const Player = ({ weapon }) => (
           weapon === "nula" ? nula : weapon === "jedan" ? jedan : weapon === "dva" ? dva : weapon === "tri" ? tri :
           weapon==="cetri" ? cetri : pet
               }
-        alt="Rock Paper Scissors"
+        alt="Par Nepar"
       />
     </div>
   </>

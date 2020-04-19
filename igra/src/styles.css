@@ -10,6 +10,7 @@
     margin: 1rem auto;
     display: flex;
     justify-content: space-evenly;
+    
   }
   
   .player {
@@ -30,6 +31,27 @@
     font-size: 18px;
     border-radius: 25px;
     background: #000;
+  }
+
+  .parneparBtn {
+    width: 100px;
+    height: 50px;
+    display: inline;
+    margin: auto 10px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 25px;
+    background: #000;
+    margin-left: 350px;
+    display: block;
+  }
+
+
+  .parneparBtn:focus{
+    color: blue;
+  }
+  .parneparBtn:active{
+    color: blue;
   }
   
   .player:nth-child(2) {
@@ -54,7 +76,7 @@
     width: 200px;
     height: 50px;
     display: block;
-    margin: 10px auto;
+    margin: -20px auto ;
     color: #fff;
     font-size: 18px;
     border-radius: 25px;
@@ -64,5 +86,6 @@
   
   button:hover {
     cursor: pointer;
+    color:red;
   }
   
