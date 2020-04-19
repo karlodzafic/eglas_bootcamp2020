@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import Player from "./player";
 import "./styles.css";
 
-const weapons = ["rock", "paper", "scissors"];
+const weapons = ["nula","jedan", "dva", "tri","cetri","pet"];
 class App extends Component {
   state = {
     playerOne: weapons[0],
@@ -34,9 +34,11 @@ class App extends Component {
     if (playerOne === playerTwo) {
       return "Oops it's a Tie!";
     } else if (
-      (playerOne === "rock" && playerTwo === "scissors") ||
-      (playerOne === "scissors" && playerTwo === "paper") ||
-      (playerOne === "paper" && playerTwo === "rock")
+      (playerOne === "nula" && playerTwo === "jedan") ||
+      (playerOne === "jedan" && playerTwo === "dva") ||
+      (playerOne === "dva" && playerTwo === "tri") ||
+      (playerOne === "tri" && playerTwo === "cetri") ||
+      (playerOne === "cetri" && playerTwo === "pet")
     ) {
       return "Player One Wins!";
     } else {
@@ -53,7 +55,7 @@ class App extends Component {
     const { playerOne, playerTwo, winner } = this.state;
     return (
       <>
-        <h1 style={{ textAlign: "center" }}>Rock Paper Scissors</h1>
+        <h1 style={{ textAlign: "center" }}>PAR NEPAR IGRA</h1>
 
         <div>
           <Player weapon={playerOne} />
@@ -62,21 +64,39 @@ class App extends Component {
         <div>
           <button
             className="weaponBtn"
-            onClick={() => this.selectWeapon("rock")}
+            onClick={() => this.selectWeapon("nula")}
           >
-            rock
+            nula
           </button>
           <button
             className="weaponBtn"
-            onClick={() => this.selectWeapon("paper")}
+            onClick={() => this.selectWeapon("jedan")}
           >
-            paper
+            jedan
           </button>
           <button
             className="weaponBtn"
-            onClick={() => this.selectWeapon("scissors")}
+            onClick={() => this.selectWeapon("dva")}
           >
-            scissor
+            dva
+          </button>
+          <button
+            className="weaponBtn"
+            onClick={() => this.selectWeapon("tri")}
+          >
+            tri
+          </button>
+          <button
+            className="weaponBtn"
+            onClick={() => this.selectWeapon("cetri")}
+          >
+            cetri
+          </button>
+          <button
+            className="weaponBtn"
+            onClick={() => this.selectWeapon("pet")}
+          >
+            pet
           </button>
         </div>
         <div className="winner">{winner ? this.selectWinner() : null}</div>
