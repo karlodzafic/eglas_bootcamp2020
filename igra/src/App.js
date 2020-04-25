@@ -1,5 +1,7 @@
 import React from 'react';
-import board from "./assets/brown.jpg"
+import board from "./assets/brown.jpg";
+import History from "./components/History";
+import Rounds from "./components/Rounds"
 import Player from "./components/Player";
 import "./styles.css";
 
@@ -7,11 +9,11 @@ const weapons = ["0","1", "2", "3","4","5"];
 
 class App extends React.Component {
   state = {
-    playerOneHand: "0",
-    playerTwoHand: "0",
+    playerOneHand: weapons[0],
+    playerTwoHand: weapons[0],
     playerChoice: null,
     winner: null,
-    history: [],
+    history:[],
   };
 
   startGame = () => {
@@ -26,8 +28,8 @@ class App extends React.Component {
         clearInterval(gameInterval);
 
         const winner = this.selectWinner();
-
-        this.setState({ history: [...this.state.history, winner] });
+        
+       this.setState({ history: [...this.state.history, winner] });
       }
     }, 100);
   };
@@ -59,14 +61,15 @@ class App extends React.Component {
   selectParNepar = choice => this.setState({ playerChoice: choice });
 
   render() {
-    const { playerOneHand, playerTwoHand, playerChoice } = this.state;
+    const { playerOneHand, playerTwoHand, playerChoice,history } = this.state;
 
     return (
       <div className="main-container">
         <div className="player-container">
           <Player weapon={playerOneHand} />
-            {/* <History history={history} /> */}
-            <img src={board} alt="board" className="daska" />;
+          <img src={board} alt="board" className="daska"/>
+               <History history={history}/>
+               <Rounds history={history}/>
           <Player weapon={playerTwoHand} />
         </div>
         <div className="buttons-container">

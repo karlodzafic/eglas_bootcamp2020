@@ -15,8 +15,8 @@
 }
 
 .player-image {
-    height: 400px;
-    width: 200px;
+  height: 400px;
+  width: 200px;
 }
 
 .buttons-container {
@@ -79,3 +79,17 @@
   display: flex;
   justify-content: center;
 }
+.scoreboard{
+position:absolute;
+margin-top: 20px;
+font-size: 90px;
+color: white;
+}
+
+.rounds{
+  position:absolute;
+  justify-content: center;
+  margin-top: 150px;
+  font-size: 40px;
+  color: white;
+  }
