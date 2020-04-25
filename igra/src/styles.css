@@ -10,7 +10,8 @@
 .player-container {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 .player-image {
@@ -49,11 +50,13 @@
 }
 
 .button {
-  font-size: 18px;
+  font-size: 25px;
+  font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
   border-radius: 25px;
   padding: 2% 4%;
   outline: none;
-  margin: 2%;
+  margin: 0.6%;
+  background-color:greenyellow;
 }
 
 .button:active {
@@ -66,5 +69,13 @@
 }
 
 .active {
-    color: blue;
+    background-color: blue;
+    color:white;
+}
+
+.daska{
+  height: 400px;
+  width: auto;
+  display: flex;
+  justify-content: center;
 }

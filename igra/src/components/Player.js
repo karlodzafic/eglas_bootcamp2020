@@ -11,12 +11,12 @@ const Player = ({ weapon }) => {
     let image = null;
 
     switch (weapon) {
-        case "nula": image = nula; break;
-        case "jedan": image = jedan; break;
-        case "dva": image = dva; break;
-        case "tri": image = tri; break;
-        case "cetiri": image = cetiri; break;
-        case "pet": image = pet; break;
+        case "0": image = nula; break;
+        case "1": image = jedan; break;
+        case "2": image = dva; break;
+        case "3": image = tri; break;
+        case "4": image = cetiri; break;
+        case "5": image = pet; break;
         default: image = nula;
     }
 

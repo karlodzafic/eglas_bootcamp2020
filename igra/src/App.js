@@ -1,14 +1,14 @@
 import React from 'react';
-
+import board from "./assets/brown.jpg"
 import Player from "./components/Player";
 import "./styles.css";
 
-const weapons = ["nula","jedan", "dva", "tri","cetiri","pet"];
+const weapons = ["0","1", "2", "3","4","5"];
 
 class App extends React.Component {
   state = {
-    playerOneHand: "nula",
-    playerTwoHand: "nula",
+    playerOneHand: "0",
+    playerTwoHand: "0",
     playerChoice: null,
     winner: null,
     history: [],
@@ -63,10 +63,10 @@ class App extends React.Component {
 
     return (
       <div className="main-container">
-        <h1>PAR NEPAR IGRA</h1>
         <div className="player-container">
           <Player weapon={playerOneHand} />
             {/* <History history={history} /> */}
+            <img src={board} alt="board" className="daska" />;
           <Player weapon={playerTwoHand} />
         </div>
         <div className="buttons-container">
