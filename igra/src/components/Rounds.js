@@ -17,7 +17,7 @@ if(history.length===0){
             array=[<tr>{word}</tr>,...array];
         }
         else{
-            word=".Runda Igrac je pobijedio";
+            word=".Runda COMP je pobijedio";
             
             array=[<tr>{word}</tr>,...array];
         }
