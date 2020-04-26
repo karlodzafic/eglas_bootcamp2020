@@ -1,31 +1,17 @@
 import React from "react";
 
-
-
-const Rounds = ({history}) =>{
-let array=[];
-let word="";
-let i;
-if(history.length===0){
-    array=[];
-    return null;
-}
-    for(i=0;i<history.length;i++){
-        if(history[i]){
-            word=".Runda Igrac je pobijedio";
-            
-            array=[<tr>{word}</tr>,...array];
-        }
-        else{
-            word=".Runda COMP je pobijedio";
-            
-            array=[<tr>{word}</tr>,...array];
-        }
-       
+const Rounds = ({ history }) => {
+    if(history.length === 0 ){
+        return <p className="rounds">No rounds yet.</p>;
     }
 
-return <div className="rounds">{array}</div>;
-
+    return (
+        <div className="rounds">
+            {history.map((game, i) => game ? <p> {i + 1}. runda: Igrac je pobijedio</p> : <p> {i + 1}. runda kompjuter je pobijedio</p>)}
+        </div>
+    );
 }
 
 export default Rounds;
+
+
