@@ -5,7 +5,7 @@ import Rounds from "./components/Rounds"
 import Player from "./components/Player";
 import "./styles.css";
 
-const weapons = ["0","1", "2", "3","4","5"];
+const weapons = ["1", "2", "3","4","5"];
 
 class App extends React.Component {
   state = {
@@ -34,13 +34,6 @@ class App extends React.Component {
     }, 100);
   };
 
-//   startGame = () => {
-//     this.setState({ playerTwoHand: weapons[Math.floor(Math.random() * weapons.length)], winner: null });
-
-//     const winner = this.selectWinner();
-
-//     this.setState({ history: [...this.state.history, winner] });
-//   } 
 
   selectWinner = () => {
         const { playerOneHand, playerTwoHand, playerChoice } = this.state;
@@ -79,7 +72,6 @@ class App extends React.Component {
             <button className={`button ${playerChoice === 'par' ? 'active' : null}`} onClick={() => this.selectParNepar("par")}>Par</button>
             <button className={`button ${playerChoice === 'nepar' ? 'active' : null}`} onClick={() => this.selectParNepar("nepar")}>Nepar</button>
         </div>
-        {/* <div className="winner">{winner ? this.selectWinner() : null}</div> */}
         <button className="button" type="button" onClick={playerChoice ? this.startGame : null}>Start!</button>
       </div>
     );

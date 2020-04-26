@@ -16,7 +16,7 @@ const History = ({ history }) => {
         }
     }
     
-    return <div className="scoreboard">Igrac {playerScore}:{computerScore} Kompjuter</div>;
+    return <div className="scoreboard">Igrac {playerScore}:{computerScore} Comp</div>;
 }
 
 export default History;

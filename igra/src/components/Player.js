@@ -1,6 +1,5 @@
 import React from "react";
 
-import nula from "../assets/0.jpg";
 import jedan from "../assets/1.jpg";
 import dva from "../assets/2.jpg";
 import tri from "../assets/3.jpg";
@@ -11,13 +10,12 @@ const Player = ({ weapon }) => {
     let image = null;
 
     switch (weapon) {
-        case "0": image = nula; break;
         case "1": image = jedan; break;
         case "2": image = dva; break;
         case "3": image = tri; break;
         case "4": image = cetiri; break;
         case "5": image = pet; break;
-        default: image = nula;
+        default: image = jedan;
     }
 
     return <img className="player-image" src={image} alt="Par Nepar" />;
